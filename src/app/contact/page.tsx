@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, User } from "lucide-react";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -35,13 +35,25 @@ export default function ContactPage() {
                   <CardTitle>Contact Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <Phone className="h-5 w-5 text-primary" />
-                    <span className="text-muted-foreground">(123) 456-7890</span>
+                   <div className="flex items-start gap-4">
+                    <User className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      Jun Bryan Torres
+                      <br />
+                      <span className="text-sm">Managing Director</span>
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-muted-foreground">
+                      07446197421
+                      <br />
+                      07521907111
+                    </span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Mail className="h-5 w-5 text-primary" />
-                    <span className="text-muted-foreground">contact@calcuconsulting.com</span>
+                    <span className="text-muted-foreground">calcuconsulting@proton.me</span>
                   </div>
                    <div className="flex items-start gap-4">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />

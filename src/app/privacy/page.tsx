@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         </p>
         <h2>Contacting Us</h2>
         <p>
-          If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at contact@calcuconsulting.com.
+          If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at calcuconsulting@proton.me.
         </p>
       </div>
     </div>

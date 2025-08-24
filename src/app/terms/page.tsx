@@ -16,7 +16,7 @@ export default function TermsOfServicePage() {
         </p>
         <h2>Contact Information</h2>
         <p>
-          If you have any questions about these Terms, please contact us at contact@calcuconsulting.com.
+          If you have any questions about these Terms, please contact us at calcuconsulting@proton.me.
         </p>
       </div>
     </div>
