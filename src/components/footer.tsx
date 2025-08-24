@@ -1,5 +1,6 @@
+
 import Link from "next/link";
-import { Building2 } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary mb-2">
-              <Building2 className="h-7 w-7" />
+              <Image src="/img/logo.png" alt="CalcuConsulting Logo" width={32} height={32} />
               <span className="font-headline">CalcuConsulting</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">

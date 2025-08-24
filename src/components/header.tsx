@@ -1,11 +1,13 @@
+
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Building2 } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,7 +21,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-card/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary">
-          <Building2 className="h-6 w-6" />
+          <Image src="/img/logo.png" alt="CalcuConsulting Logo" width={32} height={32} />
           <span className="font-headline">CalcuConsulting</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -47,7 +49,7 @@ export function Header() {
             <SheetContent side="right">
               <nav className="flex flex-col gap-6 pt-12">
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary mb-4">
-                  <Building2 className="h-6 w-6" />
+                  <Image src="/img/logo.png" alt="CalcuConsulting Logo" width={32} height={32} />
                   <span className="font-headline">CalcuConsulting</span>
                 </Link>
                 {navLinks.map((link) => (
