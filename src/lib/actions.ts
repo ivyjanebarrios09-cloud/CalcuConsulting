@@ -30,10 +30,10 @@ export async function submitContactForm(
   // In a real-world application, you would integrate an email service
   // like Resend, SendGrid, or Nodemailer here to send the email.
   // For this example, we'll log the data to the console to simulate
-  // the email being sent to calcuconsulting@proton.me.
+  // the email being sent to contact@calcuconsulting.com.
 
   console.log("--- New Contact Form Submission ---");
-  console.log(`Recipient: calcuconsulting@proton.me`);
+  console.log(`Recipient: contact@calcuconsulting.com`);
   console.log(`From: ${name} <${email}>`);
   console.log("Message:");
   console.log(message);
