@@ -15,7 +15,7 @@ export default function Home() {
             fill
             priority
             className="object-cover"
-            data-ai-hint="modern office interior"
+            data-ai-hint="modern office"
           />
           <div className="absolute inset-0 bg-primary/80" />
           <div className="relative z-10 p-4">
@@ -44,7 +44,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                 <Image src="https://placehold.co/600x400.png" alt="Team meeting" layout="fill" objectFit="cover" data-ai-hint="diverse business team" />
+                 <Image src="https://placehold.co/600x400.png" alt="Team meeting" layout="fill" objectFit="cover" data-ai-hint="business team" />
               </div>
             </div>
           </div>
