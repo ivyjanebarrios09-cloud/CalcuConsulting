@@ -73,7 +73,7 @@ export function ClientInquiryForm() {
       //     match /inquiries/{inquiryId} {
       //       allow create: if true;
       //     }
-       //     // Allow anyone to submit a contact message.
+      //     // Allow anyone to submit a contact message.
       //     match /contacts/{contactId} {
       //       allow create: if true;
       //     }
