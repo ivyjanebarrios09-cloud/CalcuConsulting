@@ -134,19 +134,26 @@ const allJobs = [
     }
 ];
 
+const jobCategories = ["All", ...Array.from(new Set(allJobs.map(job => job.company)))];
+
 
 export default function CandidatesPage() {
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("All");
     const [filteredJobs, setFilteredJobs] = useState(allJobs);
 
     useEffect(() => {
-        const results = allJobs.filter(job =>
-            job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            job.description.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        const results = allJobs.filter(job => {
+            const matchesCategory = selectedCategory === "All" || job.company === selectedCategory;
+            const matchesSearch =
+                job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                job.description.toLowerCase().includes(searchTerm.toLowerCase());
+            
+            return matchesCategory && matchesSearch;
+        });
         setFilteredJobs(results);
-    }, [searchTerm]);
+    }, [searchTerm, selectedCategory]);
 
 
     return (
@@ -175,6 +182,18 @@ export default function CandidatesPage() {
             </section>
             <section className="py-16 md:py-24">
                 <div className="container mx-auto px-4">
+                     <div className="mb-12 flex flex-wrap justify-center gap-2 md:gap-4">
+                        {jobCategories.map(category => (
+                            <Button
+                                key={category}
+                                variant={selectedCategory === category ? "default" : "outline"}
+                                onClick={() => setSelectedCategory(category)}
+                                className="capitalize"
+                            >
+                                {category}
+                            </Button>
+                        ))}
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredJobs.length > 0 ? (
                             filteredJobs.map((job, index) => (
@@ -200,7 +219,7 @@ export default function CandidatesPage() {
                             ))
                         ) : (
                             <div className="col-span-full text-center text-muted-foreground">
-                                <p>No jobs found matching your search.</p>
+                                <p>No jobs found matching your search criteria.</p>
                             </div>
                         )}
                     </div>
