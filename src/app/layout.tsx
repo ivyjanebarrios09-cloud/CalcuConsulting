@@ -8,9 +8,9 @@ import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'CalcuConsulting - Your Strategic Partner in Talent Acquisition',
+  title: 'Calcu Consulting - For all your recruitment needs',
   description:
-    'CalcuConsulting offers premier permanent recruitment, temporary staffing, and expert consulting services to help your business thrive.',
+    'Calcu Consulting offers premier permanent recruitment, temporary staffing, and expert consulting services to help your business thrive.',
 };
 
 export default function RootLayout({

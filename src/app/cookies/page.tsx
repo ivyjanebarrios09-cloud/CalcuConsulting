@@ -4,7 +4,7 @@ export default function CookiePolicyPage() {
       <div className="prose max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold font-headline text-primary mb-8">Cookie Policy</h1>
         <p>
-          This is a placeholder for the Cookie Policy. This page will explain what cookies are, how CalcuConsulting uses them on its website, and what your options are for managing them.
+          This is a placeholder for the Cookie Policy. This page will explain what cookies are, how Calcu Consulting uses them on its website, and what your options are for managing them.
         </p>
         <h2>What are cookies?</h2>
         <p>

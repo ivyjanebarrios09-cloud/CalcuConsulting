@@ -4,7 +4,7 @@ export default function TermsOfServicePage() {
       <div className="prose max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold font-headline text-primary mb-8">Terms of Service</h1>
         <p>
-          This is a placeholder for the Terms of Service. This page will contain the terms and conditions for using the CalcuConsulting website and services.
+          This is a placeholder for the Terms of Service. This page will contain the terms and conditions for using the Calcu Consulting website and services.
         </p>
         <h2>Agreement to Terms</h2>
         <p>

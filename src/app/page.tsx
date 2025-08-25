@@ -20,10 +20,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
-              CalcuConsulting
+              Calcu Consulting
             </h1>
             <p className="mt-4 text-lg md:text-2xl max-w-2xl mx-auto drop-shadow-md">
-              Your Strategic Partner in Talent Acquisition
+              For all your recruitment needs
             </p>
             <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="#services">Our Services</Link>
@@ -64,7 +64,7 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-headline font-bold text-primary mb-4">About Us</h2>
                 <p className="text-muted-foreground mb-4">
-                  CalcuConsulting is a premier recruitment and consulting firm dedicated to connecting exceptional talent with leading organizations. Our mission is to build lasting partnerships by providing tailored solutions that drive growth and success.
+                  Calcu Consulting is a premier recruitment and consulting firm dedicated to connecting exceptional talent with leading organizations. Our mission is to build lasting partnerships by providing tailored solutions that drive growth and success.
                 </p>
                 <p className="text-muted-foreground">
                   With years of industry experience, our team of experts leverages deep market insights and a vast network to deliver results that exceed expectations. We believe in a personalized approach, ensuring we understand the unique needs of both our clients and candidates.

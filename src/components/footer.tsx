@@ -9,11 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary mb-2">
-              <Image src="/img/logo.png" alt="CalcuConsulting Logo" width={32} height={32} />
-              <span className="font-headline">CalcuConsulting</span>
+              <Image src="/img/logo.png" alt="Calcu Consulting Logo" width={32} height={32} />
+              <span className="font-headline">Calcu Consulting</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Your strategic partner in talent acquisition, providing premier recruitment and consulting services.
+              For all your recruitment needs, providing premier recruitment and consulting services.
             </p>
           </div>
           <div>
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} CalcuConsulting. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Calcu Consulting. All rights reserved.</p>
         </div>
       </div>
     </footer>

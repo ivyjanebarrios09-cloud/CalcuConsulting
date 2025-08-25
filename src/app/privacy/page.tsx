@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
         <p><strong>Last Updated: {new Date().toLocaleDateString('en-GB')}</strong></p>
 
         <p>
-          CalcuConsulting ("we", "us", or "our") is committed to protecting the privacy and security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or interact with us.
+          Calcu Consulting ("we", "us", or "our") is committed to protecting the privacy and security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or interact with us.
         </p>
 
         <h2>1. Information We Collect</h2>
@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
         <p>
           If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:
         </p>
-        <p><strong>CalcuConsulting</strong></p>
+        <p><strong>Calcu Consulting</strong></p>
         <p>Email: calcuconsulting@proton.me</p>
       </div>
     </div>
