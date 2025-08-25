@@ -46,6 +46,7 @@ export function ClientInquiryForm() {
       jobTitle: "",
       jobDescription: "",
       requiredSkills: "",
+      employmentType: "permanent",
       additionalInfo: "",
     },
   });
@@ -55,20 +56,22 @@ export function ClientInquiryForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const db = getFirestore(app);
-      // To enable this write, you need to set your Firestore security rules.
+      // To enable this write operation and fix the "Missing or insufficient permissions" error,
+      // you must update your Firestore security rules in the Firebase console.
+      //
       // Go to your Firebase project -> Firestore Database -> Rules
-      // And paste the following:
+      // And paste the following rules:
       //
       // rules_version = '2';
       // service cloud.firestore {
       //   match /databases/{database}/documents {
-      //     // Allow anyone to submit an inquiry
+      //     // Allow anyone to submit an inquiry.
       //     match /inquiries/{inquiryId} {
       //       allow create: if true;
-      //       // Only allow authenticated users to read/update/delete
+      //       // Only allow authenticated users to read, update, or delete.
       //       allow read, update, delete: if request.auth != null;
       //     }
-      //     // Lock down all other collections
+      //     // Deny all other read/write access to your database by default.
       //     match /{document=**} {
       //       allow read, write: if false;
       //     }
