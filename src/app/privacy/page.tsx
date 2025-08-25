@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>4. Data Security</h2>
         <p>
-          We are committed to ensuring that your information is secure. We use appropriate data collection, storage, and processing practices and security measures (such as those provided by Firebase Firestore) to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.
+          We are committed to ensuring that your information is secure. We use appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.
         </p>
         
         <h2>5. Your Data Protection Rights</h2>
