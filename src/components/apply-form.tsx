@@ -74,8 +74,10 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
       //     // Allow anyone to submit an inquiry.
       //     match /inquiries/{inquiryId} {
       //       allow create: if true;
-      //       // Only allow authenticated users to read, update, or delete.
-      //       allow read, update, delete: if request.auth != null;
+      //     }
+      //     // Allow anyone to submit a contact message.
+      //     match /contacts/{contactId} {
+      //       allow create: if true;
       //     }
       //     // Deny all other read/write access to your database by default.
       //     match /{document=**} {
