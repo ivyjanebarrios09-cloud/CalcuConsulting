@@ -43,7 +43,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                 <Image src="https://placehold.co/600x400.png" alt="Team meeting" layout="fill" objectFit="cover" data-ai-hint="business team" />
+                 <Image src="/img/about.jpg" alt="Team meeting" layout="fill" objectFit="cover" data-ai-hint="business team" />
               </div>
             </div>
           </div>
