@@ -20,13 +20,15 @@ import { Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
 import app from "@/lib/firebase";
+import { MultiSelect } from "./ui/multi-select";
+import { jobTitles } from "@/lib/jobs";
 
 const formSchema = z.object({
   companyName: z.string().min(2, { message: "Company name is required." }),
   contactPerson: z.string().min(2, { message: "Contact person is required." }),
   email: z.string().email({ message: "A valid email is required." }),
   phone: z.string().min(10, { message: "A valid phone number is required." }),
-  jobTitle: z.string().min(3, { message: "Job title is required." }),
+  jobTitles: z.array(z.string()).min(1, { message: "Please select at least one job title." }),
   jobDescription: z.string().min(20, { message: "Job description must be at least 20 characters." }),
   requiredSkills: z.string().min(5, { message: "Please list some required skills." }),
   employmentType: z.enum(["permanent", "temporary", "contract"]),
@@ -43,7 +45,7 @@ export function ClientInquiryForm() {
       contactPerson: "",
       email: "",
       phone: "",
-      jobTitle: "",
+      jobTitles: [],
       jobDescription: "",
       requiredSkills: "",
       employmentType: "permanent",
@@ -163,13 +165,16 @@ export function ClientInquiryForm() {
 
         <FormField
           control={form.control}
-          name="jobTitle"
+          name="jobTitles"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Job Title</FormLabel>
-              <FormControl>
-                <Input placeholder="e.g., Senior Software Engineer" {...field} />
-              </FormControl>
+              <FormLabel>Job Title(s)</FormLabel>
+                <MultiSelect
+                  options={jobTitles.map(title => ({ label: title, value: title }))}
+                  selected={field.value}
+                  onChange={field.onChange}
+                  placeholder="Select job titles..."
+                />
               <FormMessage />
             </FormItem>
           )}
