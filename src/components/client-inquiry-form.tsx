@@ -84,7 +84,7 @@ export function ClientInquiryForm() {
 
       toast({
         title: "Inquiry Submitted!",
-        description: "Thank you for your submission. We will get back to you shortly.",
+        description: "Thank you for your inquiry. We have received your details and will be in contact with you via email or phone shortly to discuss your requirements.",
       });
       form.reset();
     } catch (error) {
