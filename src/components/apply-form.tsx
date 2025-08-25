@@ -16,19 +16,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, UploadCloud } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import app from "@/lib/firebase";
-import { v4 as uuidv4 } from 'uuid';
 import { Checkbox } from "./ui/checkbox";
 import Link from "next/link";
-import { useState } from "react";
-
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
-const ACCEPTED_FILE_TYPES = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-
 
 const formSchema = z.object({
   firstName: z.string().min(2, { message: "First name is required." }),
@@ -37,12 +30,6 @@ const formSchema = z.object({
   phone: z.string().min(10, { message: "A valid phone number is required." }),
   jobType: z.string().min(1, { message: "Job type is required." }),
   location: z.string().min(1, { message: "Location is required." }),
-  cv: z.any()
-    .refine((file) => file?.size <= MAX_FILE_SIZE, `Max file size is 10MB.`)
-    .refine(
-      (file) => ACCEPTED_FILE_TYPES.includes(file?.type),
-      "Only .pdf, .doc, and .docx formats are supported."
-    ).optional().nullable(),
   agreeToPolicy: z.boolean().refine((val) => val === true, {
     message: "You must agree to the privacy policy.",
   }),
@@ -51,7 +38,6 @@ const formSchema = z.object({
 
 export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
   const { toast } = useToast();
-  const [fileName, setFileName] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -62,7 +48,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
       phone: "",
       jobType: jobTitle || "",
       location: "London",
-      cv: null,
       agreeToPolicy: false,
     },
   });
@@ -72,17 +57,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const db = getFirestore(app);
-      const storage = getStorage(app);
-      let cvUrl = "";
-
-      if (values.cv) {
-        const cvFile = values.cv;
-        const fileExtension = cvFile.name.split('.').pop();
-        const cvFileName = `${uuidv4()}.${fileExtension}`;
-        const storageRef = ref(storage, `cvs/${cvFileName}`);
-        const uploadResult = await uploadBytes(storageRef, cvFile);
-        cvUrl = await getDownloadURL(uploadResult.ref);
-      }
 
       // To enable this write operation and fix the "Missing or insufficient permissions" error,
       // you must update your Firestore security rules in the Firebase console.
@@ -109,20 +83,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
       //     }
       //   }
       // }
-      //
-      // For Firebase Storage, you'll need to set rules as well.
-      // Go to your Firebase project -> Storage -> Rules
-      // And paste the following rules to allow writes to the 'cvs' folder:
-      //
-      // rules_version = '2';
-      // service firebase.storage {
-      //  match /b/{bucket}/o {
-      //    match /cvs/{fileName} {
-      //      allow write: if request.resource.size < 10 * 1024 * 1024
-      //                   && request.resource.contentType.matches('application/pdf|application/msword|application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-      //    }
-      //  }
-      // }
       await addDoc(collection(db, "applications"), {
         firstName: values.firstName,
         lastName: values.lastName,
@@ -130,7 +90,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
         phone: values.phone,
         jobType: values.jobType,
         location: values.location,
-        cvUrl: cvUrl,
         submittedAt: serverTimestamp(),
       });
 
@@ -139,7 +98,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
         description: "Thank you for your application. We have received your details and will be in contact with you shortly.",
       });
       form.reset();
-      setFileName(null);
     } catch (error) {
       console.error("Error submitting application: ", error);
       toast({
@@ -249,43 +207,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
             )}
         />
         
-        <FormField
-          control={form.control}
-          name="cv"
-          render={({ field: { onChange, value, ...rest } }) => (
-            <FormItem>
-              <FormLabel>CV</FormLabel>
-              <FormControl>
-                <div className="relative flex items-center justify-center w-full">
-                    <label htmlFor="cv-upload" className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-card hover:bg-muted">
-                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <UploadCloud className="w-8 h-8 mb-2 text-muted-foreground" />
-                            <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                            {fileName && <p className="text-xs text-muted-foreground">{fileName}</p>}
-                        </div>
-                        <Input 
-                            id="cv-upload" 
-                            type="file" 
-                            className="hidden"
-                            onChange={(e) => {
-                                const file = e.target.files?.[0];
-                                onChange(file);
-                                setFileName(file ? file.name : null);
-                            }}
-                            accept=".pdf,.doc,.docx"
-                            {...rest}
-                        />
-                    </label>
-                </div>
-              </FormControl>
-              <FormDescription>
-                Accepted file types: pdf, docx, doc. Max. file size: 10 MB.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
         <FormField
             control={form.control}
             name="agreeToPolicy"
