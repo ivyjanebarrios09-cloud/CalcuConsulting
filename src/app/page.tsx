@@ -16,7 +16,7 @@ export default function Home() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
               CalcuConsulting
@@ -62,7 +62,7 @@ export default function Home() {
                   <CardTitle className="pt-4">Expertise</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">Our team possesses deep industry knowledge to find the perfect fit for your company&apos;s needs.</p>
+                  <p className="text-muted-foreground">Our team possesses deep industry knowledge to find the perfect fit for your company's needs.</p>
                 </CardContent>
               </Card>
               <Card className="text-center">
