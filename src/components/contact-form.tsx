@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -21,6 +22,7 @@ import { Loader2 } from "lucide-react";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().min(10, { message: "A valid phone number is required." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
@@ -31,6 +33,7 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
     },
   });
@@ -43,7 +46,7 @@ export function ContactForm() {
     if (result.success) {
       toast({
         title: "Success!",
-        description: "Your message has been sent. We'll get back to you shortly.",
+        description: "Your message has been sent. Replies will be sent to your email or phone number.",
       });
       form.reset();
     } else {
@@ -84,6 +87,19 @@ export function ContactForm() {
             </FormItem>
           )}
         />
+        <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number</FormLabel>
+                <FormControl>
+                  <Input type="tel" placeholder="01234 567890" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         <FormField
           control={form.control}
           name="message"

@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/contact-form";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone, MapPin, User } from "lucide-react";
 
 export default function ContactPage() {
@@ -21,6 +21,7 @@ export default function ContactPage() {
               <Card>
                 <CardHeader>
                   <CardTitle>Send us a message</CardTitle>
+                  <CardDescription>Replies to your message will be sent to your email or phone number.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ContactForm />

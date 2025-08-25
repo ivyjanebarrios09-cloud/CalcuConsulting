@@ -6,6 +6,7 @@ import { z } from "zod";
 const contactFormSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
+  phone: z.string().min(10),
   message: z.string().min(10),
 });
 
@@ -26,7 +27,7 @@ export async function submitContactForm(
     };
   }
 
-  const { name, email, message } = validatedFields.data;
+  const { name, email, phone, message } = validatedFields.data;
 
   // In a real-world application, you would integrate an email service
   // like Resend, SendGrid, or Nodemailer here to send the email.
@@ -36,12 +37,13 @@ export async function submitContactForm(
   console.log("--- New Contact Form Submission ---");
   console.log(`Recipient: calcuconsulting@proton.me`);
   console.log(`From: ${name} <${email}>`);
+  console.log(`Phone: ${phone}`);
   console.log("Message:");
   console.log(message);
   console.log("-----------------------------------");
 
   // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   // Always return a success message for this simulation.
   return { success: true };
