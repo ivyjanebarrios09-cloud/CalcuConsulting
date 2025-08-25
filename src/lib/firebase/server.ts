@@ -3,6 +3,9 @@ import "server-only";
 import * as admin from 'firebase-admin';
 
 if (!admin.apps.length) {
+    if (!process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
+        throw new Error('FIREBASE_SERVICE_ACCOUNT_KEY is not set.');
+    }
     const serviceAccount = JSON.parse(
         process.env.FIREBASE_SERVICE_ACCOUNT_KEY as string
     );
