@@ -10,12 +10,11 @@ export default function Home() {
       <main className="flex-grow">
         <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
           <Image
-            src="https://placehold.co/1920x1080.png"
-            alt="Office background"
+            src="/img/hero.jpg"
+            alt="Hero background image"
             fill
             priority
             className="object-cover"
-            data-ai-hint="modern office"
           />
           <div className="absolute inset-0 bg-primary/80" />
           <div className="relative z-10 p-4">
