@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -15,9 +16,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { submitInquiryForm } from "@/lib/actions";
 import { Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import app from "@/lib/firebase";
 
 const formSchema = z.object({
   companyName: z.string().min(2, { message: "Company name is required." }),
@@ -51,19 +53,43 @@ export function ClientInquiryForm() {
   const { isSubmitting } = form.formState;
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const result = await submitInquiryForm(values);
+    try {
+      const db = getFirestore(app);
+      // To enable this write, you need to set your Firestore security rules.
+      // Go to your Firebase project -> Firestore Database -> Rules
+      // And paste the following:
+      //
+      // rules_version = '2';
+      // service cloud.firestore {
+      //   match /databases/{database}/documents {
+      //     // Allow anyone to submit an inquiry
+      //     match /inquiries/{inquiryId} {
+      //       allow create: if true;
+      //       // Only allow authenticated users to read/update/delete
+      //       allow read, update, delete: if request.auth != null;
+      //     }
+      //     // Lock down all other collections
+      //     match /{document=**} {
+      //       allow read, write: if false;
+      //     }
+      //   }
+      // }
+      await addDoc(collection(db, "inquiries"), {
+        ...values,
+        submittedAt: serverTimestamp(),
+      });
 
-    if (result.success) {
       toast({
         title: "Inquiry Submitted!",
         description: "Thank you for your submission. We will get back to you shortly.",
       });
       form.reset();
-    } else {
+    } catch (error) {
+      console.error("Error writing to Firestore: ", error);
       toast({
         variant: "destructive",
         title: "Error",
-        description: result.message || "Something went wrong. Please try again.",
+        description: "Something went wrong. Please try again.",
       });
     }
   }
