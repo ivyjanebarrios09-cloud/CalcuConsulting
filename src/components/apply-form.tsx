@@ -47,7 +47,7 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
       email: "",
       phone: "",
       jobType: jobTitle || "",
-      location: "London",
+      location: "Central London",
       agreeToPolicy: false,
     },
   });
@@ -175,9 +175,6 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
               <FormControl>
                 <Input {...field} readOnly className="bg-muted"/>
               </FormControl>
-               <FormDescription>
-                Various roles include but not limited to: - Front of House - Waiting staff, bar & wine, hospitality assistant etc. - Back of House - Chef de Partie, kitchen porter, kitchen assistant etc.
-               </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -196,10 +193,11 @@ export function ApplyForm({ jobTitle }: { jobTitle: string | null }) {
                     </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                        <SelectItem value="London">London</SelectItem>
-                        <SelectItem value="Wirral">Wirral</SelectItem>
-                        <SelectItem value="Manchester">Manchester</SelectItem>
-                         <SelectItem value="Liverpool">Liverpool</SelectItem>
+                        <SelectItem value="Central London">Central London</SelectItem>
+                        <SelectItem value="North London">North London</SelectItem>
+                        <SelectItem value="East London">East London</SelectItem>
+                        <SelectItem value="South London">South London</SelectItem>
+                        <SelectItem value="West London">West London</SelectItem>
                     </SelectContent>
                 </Select>
                 <FormMessage />
