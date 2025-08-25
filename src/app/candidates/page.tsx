@@ -7,31 +7,66 @@ import Link from "next/link";
 
 const jobs = [
     {
-        title: "Software Engineer",
-        company: "Tech Solutions Inc.",
+        title: "Room Attendant",
+        company: "Hotels & Hospitality",
         location: "London, UK",
-        description: "Developing and maintaining web applications using modern technologies.",
+        description: "Maintain guest rooms to the highest standard of cleanliness and presentation.",
         image: "https://placehold.co/100x100.png"
     },
     {
-        title: "Project Manager",
-        company: "Innovate Ltd.",
+        title: "Chef de Partie",
+        company: "Restaurants, Pubs & Bars",
         location: "Manchester, UK",
-        description: "Leading project teams to deliver high-quality products on time.",
+        description: "Manage a section of the kitchen, preparing high-quality dishes.",
         image: "https://placehold.co/100x100.png"
     },
     {
-        title: "UX/UI Designer",
-        company: "Creative Minds",
-        location: "Remote",
-        description: "Designing intuitive and engaging user interfaces for our clients.",
+        title: "Event Steward",
+        company: "Events, Venues & Stadiums",
+        location: "Birmingham, UK",
+        description: "Ensure the safety and enjoyment of attendees at live events.",
         image: "https://placehold.co/100x100.png"
     },
      {
-        title: "Data Scientist",
-        company: "Analytics Co",
+        title: "Care Assistant",
+        company: "Care & Support Work",
+        location: "Liverpool, UK",
+        description: "Provide compassionate care and support to individuals in need.",
+        image: "https://placehold.co/100x100.png"
+    },
+    {
+        title: "Construction Labourer",
+        company: "Construction",
+        location: "Leeds, UK",
+        description: "Assist with various tasks on construction sites, including manual labour.",
+        image: "https://placehold.co/100x100.png"
+    },
+    {
+        title: "Commercial Cleaner",
+        company: "Cleaning & Facilities Management",
+        location: "Glasgow, UK",
+        description: "Perform cleaning duties in commercial buildings and offices.",
+        image: "https://placehold.co/100x100.png"
+    },
+    {
+        title: "Warehouse Operative",
+        company: "Warehouse & Logistics",
+        location: "Bristol, UK",
+        description: "Handle the receipt, storage, and dispatch of goods in a warehouse.",
+        image: "https://placehold.co/100x100.png"
+    },
+    {
+        title: "Delivery Driver",
+        company: "Driving & Delivery",
+        location: "Remote",
+        description: "Transport goods and packages to various destinations in a timely manner.",
+        image: "https://placehold.co/100x100.png"
+    },
+    {
+        title: "Waiter/Waitress",
+        company: "Restaurants, Pubs & Bars",
         location: "Edinburgh, UK",
-        description: "Analyzing large datasets to extract meaningful insights.",
+        description: "Provide excellent customer service, take orders, and serve food and beverages.",
         image: "https://placehold.co/100x100.png"
     },
 ];
@@ -49,7 +84,7 @@ export default function CandidatesPage() {
                         <div className="relative">
                             <Input
                                 type="search"
-                                placeholder="Search for jobs (e.g., 'Software Engineer')"
+                                placeholder="Search for jobs (e.g., 'Chef')"
                                 className="w-full !pr-12 text-base text-foreground"
                             />
                             <Button size="icon" variant="ghost" className="absolute top-1/2 right-2 -translate-y-1/2 h-8 w-8">
@@ -65,7 +100,7 @@ export default function CandidatesPage() {
                         {jobs.map((job, index) => (
                             <Card key={index} className="flex flex-col">
                                 <CardHeader className="flex-row items-center gap-4">
-                                     <Image src={job.image} alt={`${job.company} logo`} width={56} height={56} className="rounded-lg" data-ai-hint="company logo" />
+                                     <Image src={job.image} alt={`${job.company} logo`} width={56} height={56} className="rounded-lg" data-ai-hint="industry icon" />
                                     <div>
                                         <CardTitle>{job.title}</CardTitle>
                                         <CardDescription>{job.company} - {job.location}</CardDescription>
