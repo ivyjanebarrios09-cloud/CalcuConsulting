@@ -65,6 +65,10 @@ export function ClientInquiryForm() {
       // rules_version = '2';
       // service cloud.firestore {
       //   match /databases/{database}/documents {
+      //     // Allow anyone to submit an application.
+      //     match /applications/{applicationId} {
+      //       allow create: if true;
+      //     }
       //     // Allow anyone to submit an inquiry.
       //     match /inquiries/{inquiryId} {
       //       allow create: if true;
