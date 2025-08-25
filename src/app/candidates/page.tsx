@@ -231,7 +231,7 @@ export default function CandidatesPage() {
                                     </CardContent>
                                     <CardFooter>
                                         <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                                            <Link href="#">Apply Now</Link>
+                                            <Link href={`/apply?jobTitle=${encodeURIComponent(job.title)}`}>Apply Now</Link>
                                         </Button>
                                     </CardFooter>
                                 </Card>
