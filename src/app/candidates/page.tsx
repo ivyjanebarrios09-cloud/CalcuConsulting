@@ -4,8 +4,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import Image from "next/image";
+import { Search, BedDouble, ConciergeBell, UserCheck, ChefHat, UtensilsCrossed, Wine, Shield, Ticket, Crown, Martini, CookingPot, NotebookPen, PartyPopper, MonitorSpeaker, Utensils, House, Tent, Music } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -15,22 +14,19 @@ const allJobs = [
         title: "Room Attendant",
         company: "Hotels",
         description: "Maintain guest rooms to the highest standard of cleanliness and presentation.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "hotel room"
+        icon: BedDouble
     },
     {
         title: "Concierge",
         company: "Hotels",
         description: "Assist guests with various tasks such as making restaurant reservations, booking transportation and arranging spa services.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "hotel lobby"
+        icon: ConciergeBell
     },
     {
         title: "Front Desk Agent",
         company: "Hotels",
         description: "Welcome guests, manage reservations and provide information about the hotel and its services.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "hotel reception"
+        icon: UserCheck
     },
 
     // Restaurants
@@ -38,22 +34,19 @@ const allJobs = [
         title: "Chef de Partie",
         company: "Restaurants",
         description: "Manage a section of the kitchen, preparing high-quality dishes.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "kitchen chef"
+        icon: ChefHat
     },
     {
         title: "Waiter/Waitress",
         company: "Restaurants",
         description: "Provide excellent customer service, take orders, and serve food and beverages.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "restaurant service"
+        icon: UtensilsCrossed
     },
     {
         title: "Sommelier",
         company: "Restaurants",
         description: "Manage wine cellar and advise guests on wine pairings.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "wine tasting"
+        icon: Wine
     },
 
     // Stadiums
@@ -61,15 +54,13 @@ const allJobs = [
         title: "Event Steward",
         company: "Stadiums",
         description: "Ensure the safety and enjoyment of attendees at live events in stadiums.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "stadium crowd"
+        icon: Shield
     },
     {
         title: "Box Office Clerk",
         company: "Stadiums",
         description: "Sell tickets and provide information for events at the stadium.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "ticket window"
+        icon: Ticket
     },
 
     // Private Members Clubs
@@ -77,15 +68,13 @@ const allJobs = [
         title: "Club Manager",
         company: "Private Members Clubs",
         description: "Oversee the operations of a private members club, ensuring excellent service.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "private club"
+        icon: Crown
     },
     {
         title: "Bartender",
         company: "Private Members Clubs",
         description: "Prepare and serve drinks to members in a professional and friendly manner.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "cocktail bar"
+        icon: Martini
     },
     
     // Contract Catering
@@ -93,15 +82,13 @@ const allJobs = [
         title: "Catering Manager",
         company: "Contract Catering",
         description: "Plan, organize, and manage catering operations for various clients and events.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "catering event"
+        icon: CookingPot
     },
     {
         title: "Catering Assistant",
         company: "Contract Catering",
         description: "Assist in food preparation, service, and cleanup for catered events.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "food service"
+        icon: NotebookPen
     },
 
     // Events
@@ -109,15 +96,13 @@ const allJobs = [
         title: "Event Coordinator",
         company: "Events",
         description: "Plan and execute events, managing all aspects from logistics to guest services.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "event planning"
+        icon: PartyPopper
     },
     {
         title: "A/V Technician",
         company: "Events",
         description: "Set up, operate, and maintain audio and visual equipment for live events.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "sound board"
+        icon: MonitorSpeaker
     },
 
     // Private Households
@@ -125,15 +110,13 @@ const allJobs = [
         title: "Private Chef",
         company: "Private Households",
         description: "Create and prepare meals for private households, catering to specific dietary needs and preferences.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "gourmet dish"
+        icon: Utensils
     },
     {
         title: "Housekeeper",
         company: "Private Households",
         description: "Maintain cleanliness and order within a private residence.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "clean house"
+        icon: House
     },
     
     // Festivals
@@ -141,15 +124,13 @@ const allJobs = [
         title: "Festival Staff",
         company: "Festivals",
         description: "Perform various duties at festivals, including ticket scanning, crowd management, and information services.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "music festival"
+        icon: Tent
     },
     {
         title: "Sound Engineer",
         company: "Festivals",
         description: "Manage audio equipment for live performances at festivals.",
-        image: "https://placehold.co/100x100.png",
-        aiHint: "mixing console"
+        icon: Music
     }
 ];
 
@@ -199,7 +180,9 @@ export default function CandidatesPage() {
                             filteredJobs.map((job, index) => (
                                 <Card key={index} className="flex flex-col">
                                     <CardHeader className="flex-row items-center gap-4">
-                                        <Image src={job.image} alt={`${job.company} logo`} width={56} height={56} className="rounded-lg" data-ai-hint={job.aiHint} />
+                                        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
+                                            <job.icon className="h-8 w-8 text-primary" />
+                                        </div>
                                         <div>
                                             <CardTitle>{job.title}</CardTitle>
                                             <CardDescription>{job.company}</CardDescription>
