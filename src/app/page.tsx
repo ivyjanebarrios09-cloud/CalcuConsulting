@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, Users, Lightbulb, CheckCircle, Target, Handshake } from 'lucide-react';
+import { Briefcase, Users, Lightbulb, CheckCircle, Target, Handshake, Search, UserCheck } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -27,6 +27,33 @@ export default function Home() {
             <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="#services">Our Services</Link>
             </Button>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 text-center">
+              <Link href="/candidates">
+                <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-pink-600 text-white">
+                    <Image src="https://placehold.co/600x300/ec4899/ffffff.png?text=Candidates" alt="Candidates" layout="fill" objectFit="cover" className="opacity-20 group-hover:opacity-30 transition-opacity" data-ai-hint="geometric abstract" />
+                    <div className="relative z-10">
+                      <h3 className="text-3xl font-bold font-headline mb-2">CANDIDATES</h3>
+                      <p className="mb-4">FIND YOUR PERFECT JOB HERE!</p>
+                      <Button variant="outline" className="text-pink-600 bg-white border-white hover:bg-white/90">CLICK HERE!</Button>
+                    </div>
+                </div>
+              </Link>
+              <Link href="/clients">
+                <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-pink-600 text-white">
+                     <Image src="https://placehold.co/600x300/ec4899/ffffff.png?text=Clients" alt="Clients" layout="fill" objectFit="cover" className="opacity-20 group-hover:opacity-30 transition-opacity" data-ai-hint="geometric abstract" />
+                    <div className="relative z-10">
+                      <h3 className="text-3xl font-bold font-headline mb-2">CLIENTS</h3>
+                      <p className="mb-4">DISCOVER TOP TALENT!</p>
+                      <Button variant="outline" className="text-pink-600 bg-white border-white hover:bg-white/90">CLICK HERE!</Button>
+                    </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </section>
 
