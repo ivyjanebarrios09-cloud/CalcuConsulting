@@ -9,14 +9,10 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
-        <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white">
-          <Image
-            src="/img/hero.jpg"
-            alt="Hero background image"
-            fill
-            priority
-            className="object-cover"
-          />
+        <section 
+          className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url('/img/hero.jpg')" }}
+        >
           <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
@@ -36,7 +32,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 text-center">
               <Link href="/candidates">
                 <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-primary text-primary-foreground">
-                    <Image src="https://placehold.co/600x300/1A237E/ffffff.png?text=Candidates" alt="Candidates" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
+                    <Image src="https://placehold.co/600x300/A7C7E7/374151.png?text=Candidates" alt="Candidates" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold font-headline mb-2">CANDIDATES</h3>
                       <p className="mb-4">FIND YOUR PERFECT JOB HERE!</p>
@@ -46,7 +42,7 @@ export default function Home() {
               </Link>
               <Link href="/clients">
                 <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-accent text-accent-foreground">
-                     <Image src="https://placehold.co/600x300/008080/ffffff.png?text=Clients" alt="Clients" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
+                     <Image src="https://placehold.co/600x300/B5EAD7/374151.png?text=Clients" alt="Clients" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold font-headline mb-2">CLIENTS</h3>
                       <p className="mb-4">DISCOVER TOP TALENT!</p>
