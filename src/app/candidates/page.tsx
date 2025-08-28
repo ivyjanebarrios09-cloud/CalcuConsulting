@@ -8,6 +8,7 @@ import { allJobs, jobCategories } from "@/lib/jobs";
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 
 export default function CandidatesPage() {
@@ -74,7 +75,11 @@ export default function CandidatesPage() {
                                 <Card key={index} className="flex flex-col">
                                     <CardHeader className="flex-row items-center gap-4">
                                         <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
-                                            <job.icon className="h-8 w-8 text-primary" />
+                                            {job.image ? (
+                                                <Image src={job.image} alt={job.title} width={56} height={56} className="rounded-lg object-cover h-14 w-14" />
+                                            ) : (
+                                                <job.icon className="h-8 w-8 text-primary" />
+                                            )}
                                         </div>
                                         <div>
                                             <CardTitle>{job.title}</CardTitle>

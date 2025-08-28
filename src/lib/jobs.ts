@@ -8,21 +8,24 @@ export const allJobs = [
         company: "Hotels",
         description: "Maintain guest rooms to the highest standard of cleanliness and presentation.",
         icon: BedDouble,
-        tags: ["Hotels"]
+        tags: ["Hotels"],
+        image: "/img/room attendant.jpg"
     },
     {
         title: "Concierge",
         company: "Hotels",
         description: "Assist guests with various tasks such as making restaurant reservations, booking transportation and arranging spa services.",
         icon: ConciergeBell,
-        tags: ["Hotels"]
+        tags: ["Hotels"],
+        image: "/img/Concierge.jpg"
     },
     {
         title: "Front Desk Agent",
         company: "Hotels",
         description: "Welcome guests, manage reservations and provide information about the hotel and its services.",
         icon: UserCheck,
-        tags: ["Hotels"]
+        tags: ["Hotels"],
+        image: "/img/front desk agent.jpg"
     },
 
     // Restaurants
@@ -31,21 +34,24 @@ export const allJobs = [
         company: "Restaurants",
         description: "Manage a section of the kitchen, preparing high-quality dishes.",
         icon: ChefHat,
-        tags: ["Restaurants", "Hotels", "Contract Catering", "Private Members Clubs", "Events"]
+        tags: ["Restaurants", "Hotels", "Contract Catering", "Private Members Clubs", "Events"],
+        image: "/img/Chef de Partie.jpg"
     },
     {
         title: "Waiter/Waitress",
         company: "Restaurants",
         description: "Provide excellent customer service, take orders, and serve food and beverages.",
         icon: UtensilsCrossed,
-        tags: ["Restaurants", "Hotels", "Private Members Clubs", "Events"]
+        tags: ["Restaurants", "Hotels", "Private Members Clubs", "Events"],
+        image: "/img/waiter.jpg"
     },
     {
         title: "Sommelier",
         company: "Restaurants",
         description: "Manage wine cellar and advise guests on wine pairings.",
         icon: Wine,
-        tags: ["Restaurants", "Private Members Clubs", "Hotels"]
+        tags: ["Restaurants", "Private Members Clubs", "Hotels"],
+        image: "/img/Sommelier.jpg"
     },
 
     // Stadiums
@@ -54,7 +60,8 @@ export const allJobs = [
         company: "Stadiums",
         description: "Ensure the safety and enjoyment of attendees at live events in stadiums.",
         icon: Shield,
-        tags: ["Stadiums", "Events", "Festivals"]
+        tags: ["Stadiums", "Events", "Festivals"],
+        image: "/img/event steward.jpg"
     },
     {
         title: "Box Office Clerk",
@@ -77,7 +84,8 @@ export const allJobs = [
         company: "Private Members Clubs",
         description: "Prepare and serve drinks to members in a professional and friendly manner.",
         icon: Martini,
-        tags: ["Private Members Clubs", "Restaurants", "Hotels", "Events"]
+        tags: ["Private Members Clubs", "Restaurants", "Hotels", "Events"],
+        image: "/img/Bartender.jpg"
     },
     
     // Contract Catering
@@ -125,7 +133,8 @@ export const allJobs = [
         company: "Private Households",
         description: "Maintain cleanliness and order within a private residence.",
         icon: House,
-        tags: ["Private Households", "Hotels"]
+        tags: ["Private Households", "Hotels"],
+        image: "/img/House Keeper.jpg"
     },
     
     // Festivals
