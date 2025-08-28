@@ -15,7 +15,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4 flex flex-col items-center">
-            <Image src="/img/logo.png" alt="Calcu Consulting Logo" width={100} height={100} className="mb-4 drop-shadow-lg" />
+            <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={100} height={100} className="mb-4 drop-shadow-lg" />
             <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
               Calcu Consulting
             </h1>

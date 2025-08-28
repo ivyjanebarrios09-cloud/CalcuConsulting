@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary mb-2">
-              <Image src="/img/logo.png" alt="Calcu Consulting Logo" width={32} height={32} />
+              <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={32} height={32} />
               <span className="font-headline">Calcu Consulting</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
