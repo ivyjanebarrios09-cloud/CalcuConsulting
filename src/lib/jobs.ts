@@ -141,7 +141,7 @@ export const allJobs = [
         description: "Maintain cleanliness and order within a private residence.",
         icon: House,
         tags: ["Private Households", "Hotels"],
-        image: "/img/House Keepers.jpg"
+        image: "/img/housekeepersss.jpg"
     },
     
     // Festivals
