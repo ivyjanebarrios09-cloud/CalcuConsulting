@@ -17,7 +17,7 @@ export const allJobs = [
         description: "Assist guests with various tasks such as making restaurant reservations, booking transportation and arranging spa services.",
         icon: ConciergeBell,
         tags: ["Hotels"],
-        image: "/img/Concierge.jpg"
+        image: "/img/Concierges.jpg"
     },
     {
         title: "Front Desk Agent",
@@ -51,7 +51,7 @@ export const allJobs = [
         description: "Manage wine cellar and advise guests on wine pairings.",
         icon: Wine,
         tags: ["Restaurants", "Private Members Clubs", "Hotels"],
-        image: "/img/Sommelier.jpg"
+        image: "/img/Sommeliers.jpg"
     },
 
     // Stadiums
@@ -87,7 +87,7 @@ export const allJobs = [
         description: "Prepare and serve drinks to members in a professional and friendly manner.",
         icon: Martini,
         tags: ["Private Members Clubs", "Restaurants", "Hotels", "Events"],
-        image: "/img/Bartender.jpg"
+        image: "/img/Bartenders.jpg"
     },
     
     // Contract Catering
@@ -133,7 +133,7 @@ export const allJobs = [
         description: "Create and prepare meals for private households, catering to specific dietary needs and preferences.",
         icon: Utensils,
         tags: ["Private Households"],
-        image: "/img/Private chef.jpg"
+        image: "/img/Private chefs.jpg"
     },
     {
         title: "Housekeeper",
@@ -141,7 +141,7 @@ export const allJobs = [
         description: "Maintain cleanliness and order within a private residence.",
         icon: House,
         tags: ["Private Households", "Hotels"],
-        image: "/img/House Keeper.jpg"
+        image: "/img/House Keepers.jpg"
     },
     
     // Festivals
