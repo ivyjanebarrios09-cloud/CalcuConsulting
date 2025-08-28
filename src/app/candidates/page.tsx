@@ -72,22 +72,22 @@ export default function CandidatesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredJobs.length > 0 ? (
                             filteredJobs.map((job, index) => (
-                                <Card key={index} className="flex flex-col">
-                                    <CardHeader className="flex-row items-center gap-4">
-                                        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10">
-                                            {job.image ? (
-                                                <Image src={job.image} alt={job.title} width={56} height={56} className="rounded-lg object-cover h-14 w-14" />
-                                            ) : (
-                                                <job.icon className="h-8 w-8 text-primary" />
-                                            )}
+                                <Card key={index} className="flex flex-col overflow-hidden">
+                                     {job.image ? (
+                                        <div className="relative h-48 w-full">
+                                            <Image src={job.image} alt={job.title} layout="fill" objectFit="cover" />
                                         </div>
-                                        <div>
-                                            <CardTitle>{job.title}</CardTitle>
-                                            <CardDescription>{job.company}</CardDescription>
+                                    ) : (
+                                        <div className="flex h-48 w-full items-center justify-center bg-primary/10">
+                                             <job.icon className="h-16 w-16 text-primary" />
                                         </div>
+                                    )}
+                                    <CardHeader>
+                                        <CardTitle>{job.title}</CardTitle>
+                                        <CardDescription>{job.company}</CardDescription>
                                     </CardHeader>
                                     <CardContent className="flex-grow">
-                                        <p className="text-muted-foreground text-sm">{job.description}</p>
+                                        <p className="text-muted-foreground text-sm line-clamp-3">{job.description}</p>
                                     </CardContent>
                                     <CardFooter>
                                         <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
