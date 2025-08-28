@@ -68,7 +68,8 @@ export const allJobs = [
         company: "Stadiums",
         description: "Sell tickets and provide information for events at the stadium.",
         icon: Ticket,
-        tags: ["Stadiums", "Events", "Festivals"]
+        tags: ["Stadiums", "Events", "Festivals"],
+        image: "/img/Box Office Clerk.jpg"
     },
 
     // Private Members Clubs
@@ -77,7 +78,8 @@ export const allJobs = [
         company: "Private Members Clubs",
         description: "Oversee the operations of a private members club, ensuring excellent service.",
         icon: Crown,
-        tags: ["Private Members Clubs"]
+        tags: ["Private Members Clubs"],
+        image: "/img/Club Manager.jpeg"
     },
     {
         title: "Bartender",
@@ -94,14 +96,16 @@ export const allJobs = [
         company: "Contract Catering",
         description: "Plan, organize, and manage catering operations for various clients and events.",
         icon: CookingPot,
-        tags: ["Contract Catering", "Events"]
+        tags: ["Contract Catering", "Events"],
+        image: "/img/catering manager.png"
     },
     {
         title: "Catering Assistant",
         company: "Contract Catering",
         description: "Assist in food preparation, service, and cleanup for catered events.",
         icon: NotebookPen,
-        tags: ["Contract Catering", "Events", "Festivals"]
+        tags: ["Contract Catering", "Events", "Festivals"],
+        image: "/img/Catering Assistant.jpg"
     },
 
     // Events
@@ -110,14 +114,16 @@ export const allJobs = [
         company: "Events",
         description: "Plan and execute events, managing all aspects from logistics to guest services.",
         icon: PartyPopper,
-        tags: ["Events", "Festivals"]
+        tags: ["Events", "Festivals"],
+        image: "/img/Event Coordinator.jpg"
     },
     {
         title: "A/V Technician",
         company: "Events",
         description: "Set up, operate, and maintain audio and visual equipment for live events.",
         icon: MonitorSpeaker,
-        tags: ["Events", "Festivals", "Stadiums"]
+        tags: ["Events", "Festivals", "Stadiums"],
+        image: "/img/AV Technician.png"
     },
 
     // Private Households
@@ -126,7 +132,8 @@ export const allJobs = [
         company: "Private Households",
         description: "Create and prepare meals for private households, catering to specific dietary needs and preferences.",
         icon: Utensils,
-        tags: ["Private Households"]
+        tags: ["Private Households"],
+        image: "/img/private chef.jpg"
     },
     {
         title: "Housekeeper",
@@ -143,14 +150,16 @@ export const allJobs = [
         company: "Festivals",
         description: "Perform various duties at festivals, including ticket scanning, crowd management, and information services.",
         icon: Tent,
-        tags: ["Festivals", "Events"]
+        tags: ["Festivals", "Events"],
+        image: "/img/Festival Staff.jpg"
     },
     {
         title: "Sound Engineer",
         company: "Festivals",
         description: "Manage audio equipment for live performances at festivals.",
         icon: Music,
-        tags: ["Festivals", "Events", "Stadiums"]
+        tags: ["Festivals", "Events", "Stadiums"],
+        image: "/img/Sound Engineer.jpg"
     }
 ];
 
