@@ -17,7 +17,7 @@ export const allJobs = [
         description: "Assist guests with various tasks such as making restaurant reservations, booking transportation and arranging spa services.",
         icon: ConciergeBell,
         tags: ["Hotels"],
-        image: "/img/Concierges.jpg"
+        image: "/img/conciergess.jpg"
     },
     {
         title: "Front Desk Agent",
@@ -43,7 +43,7 @@ export const allJobs = [
         description: "Provide excellent customer service, take orders, and serve food and beverages.",
         icon: UtensilsCrossed,
         tags: ["Restaurants", "Hotels", "Private Members Clubs", "Events"],
-        image: "/img/waiter.jpg"
+        image: "/img/waiters.jpg"
     },
     {
         title: "Sommelier",
