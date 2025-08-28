@@ -43,7 +43,7 @@ export const allJobs = [
         description: "Provide excellent customer service, take orders, and serve food and beverages.",
         icon: UtensilsCrossed,
         tags: ["Restaurants", "Hotels", "Private Members Clubs", "Events"],
-        image: "/img/waiter.jpg"
+        image: "/img/waitresses.jpg"
     },
     {
         title: "Sommelier",
