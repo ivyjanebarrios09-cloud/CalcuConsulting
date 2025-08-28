@@ -43,7 +43,7 @@ export const allJobs = [
         description: "Provide excellent customer service, take orders, and serve food and beverages.",
         icon: UtensilsCrossed,
         tags: ["Restaurants", "Hotels", "Private Members Clubs", "Events"],
-        image: "/img/waitresses.jpg"
+        image: "/img/waiter.jpg"
     },
     {
         title: "Sommelier",
@@ -133,7 +133,7 @@ export const allJobs = [
         description: "Create and prepare meals for private households, catering to specific dietary needs and preferences.",
         icon: Utensils,
         tags: ["Private Households"],
-        image: "/img/private chef.jpg"
+        image: "/img/Private chef.jpg"
     },
     {
         title: "Housekeeper",
