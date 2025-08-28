@@ -75,7 +75,7 @@ export default function CandidatesPage() {
                                 <Card key={index} className="flex flex-col overflow-hidden">
                                      {job.image ? (
                                         <div className="relative h-48 w-full">
-                                            <Image src={job.image} alt={job.title} layout="fill" objectFit="cover" />
+                                            <Image src={job.image} alt={job.title} fill style={{objectFit: 'cover'}} />
                                         </div>
                                     ) : (
                                         <div className="flex h-48 w-full items-center justify-center bg-primary/10">
