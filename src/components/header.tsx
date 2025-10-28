@@ -11,8 +11,6 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/candidates", label: "Candidates" },
-  { href: "/clients", label: "Clients" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -61,7 +59,7 @@ export function Header() {
                   <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={32} height={32} />
                   <span className="font-headline">Calcu Consulting</span>
                 </Link>
-                {[...navLinks, ...secondaryNavLinks].map((link) => (
+                {[...navLinks, { href: "/candidates", label: "Candidates" }, { href: "/clients", label: "Clients" }, ...secondaryNavLinks].map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
