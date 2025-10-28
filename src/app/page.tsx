@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="py-16 md:py-24">
+        <section id="why-choose-us" className="py-16 md:py-24">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-headline font-bold text-primary mb-2">Why Choose Us?</h2>
             <p className="text-muted-foreground max-w-3xl mx-auto mb-12">We are committed to excellence and delivering unparalleled value to our clients through our bespoke services.</p>

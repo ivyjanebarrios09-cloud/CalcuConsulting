@@ -16,6 +16,11 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+const secondaryNavLinks = [
+    { href: "/#about", label: "About Us"},
+    { href: "/#why-choose-us", label: "Why Choose Us"}
+]
+
 export function Header() {
   const pathname = usePathname();
 
@@ -56,7 +61,7 @@ export function Header() {
                   <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={32} height={32} />
                   <span className="font-headline">Calcu Consulting</span>
                 </Link>
-                {navLinks.map((link) => (
+                {[...navLinks, ...secondaryNavLinks].map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -72,8 +77,19 @@ export function Header() {
             </SheetContent>
           </Sheet>
         </div>
-         <div className="hidden md:flex justify-end">
-          {/* This empty div will push the nav to the center */}
+         <div className="hidden md:flex justify-end items-center gap-6">
+          {secondaryNavLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                pathname === link.href ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </header>
