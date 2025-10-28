@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetDescription } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -42,6 +42,9 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <div className="hidden md:flex justify-end items-center gap-6">
+          
+        </div>
         <div className="flex justify-end md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -51,6 +54,10 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Mobile Menu</SheetTitle>
+                <SheetDescription>Main navigation links for the website.</SheetDescription>
+              </SheetHeader>
               <nav className="flex flex-col gap-6 pt-12">
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary mb-4">
                   <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={32} height={32} />
@@ -71,9 +78,6 @@ export function Header() {
               </nav>
             </SheetContent>
           </Sheet>
-        </div>
-         <div className="hidden md:flex justify-end items-center gap-6">
-          
         </div>
       </div>
     </header>
