@@ -68,7 +68,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                 <Image src="/img/about.jpg" alt="Team meeting" fill objectFit="cover" data-ai-hint="business team" />
+                 <Image src="/img/aboutt.jpg" alt="Team meeting" fill objectFit="cover" data-ai-hint="business team" />
               </div>
             </div>
           </div>
