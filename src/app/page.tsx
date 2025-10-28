@@ -28,33 +28,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 text-center">
-              <Link href="/candidates">
-                <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-primary text-primary-foreground">
-                    <Image src="https://placehold.co/600x300/A7C7E7/374151.png?text=Candidates" alt="Candidates" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
-                    <div className="relative z-10">
-                      <h3 className="text-3xl font-bold font-headline mb-2">CANDIDATES</h3>
-                      <p className="mb-4">FIND YOUR PERFECT JOB HERE!</p>
-                      <Button variant="outline" className="text-primary bg-primary-foreground border-primary-foreground hover:bg-primary-foreground/90">CLICK HERE!</Button>
-                    </div>
-                </div>
-              </Link>
-              <Link href="/clients">
-                <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-accent text-accent-foreground">
-                     <Image src="https://placehold.co/600x300/B5EAD7/374151.png?text=Clients" alt="Clients" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
-                    <div className="relative z-10">
-                      <h3 className="text-3xl font-bold font-headline mb-2">CLIENTS</h3>
-                      <p className="mb-4">DISCOVER TOP TALENT!</p>
-                      <Button variant="outline" className="text-accent bg-accent-foreground border-accent-foreground hover:bg-accent-foreground/90">CLICK HERE!</Button>
-                    </div>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <section id="services" className="py-16 md:py-24 bg-card">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-headline font-bold text-primary mb-2">Our Services</h2>
@@ -93,6 +66,33 @@ export default function Home() {
                   <p className="text-muted-foreground">Strategic advice and HR consulting to optimize your talent management and recruitment strategies.</p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 text-center">
+              <Link href="/candidates">
+                <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-primary text-primary-foreground">
+                    <Image src="https://placehold.co/600x300/A7C7E7/374151.png?text=Candidates" alt="Candidates" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
+                    <div className="relative z-10">
+                      <h3 className="text-3xl font-bold font-headline mb-2">CANDIDATES</h3>
+                      <p className="mb-4">FIND YOUR PERFECT JOB HERE!</p>
+                      <Button variant="outline" className="text-primary bg-primary-foreground border-primary-foreground hover:bg-primary-foreground/90">CLICK HERE!</Button>
+                    </div>
+                </div>
+              </Link>
+              <Link href="/clients">
+                <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-accent text-accent-foreground">
+                     <Image src="https://placehold.co/600x300/B5EAD7/374151.png?text=Clients" alt="Clients" fill objectFit="cover" className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
+                    <div className="relative z-10">
+                      <h3 className="text-3xl font-bold font-headline mb-2">CLIENTS</h3>
+                      <p className="mb-4">DISCOVER TOP TALENT!</p>
+                      <Button variant="outline" className="text-accent bg-accent-foreground border-accent-foreground hover:bg-accent-foreground/90">CLICK HERE!</Button>
+                    </div>
+                </div>
+              </Link>
             </div>
           </div>
         </section>
