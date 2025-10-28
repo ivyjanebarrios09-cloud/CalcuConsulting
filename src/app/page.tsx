@@ -22,9 +22,6 @@ export default function Home() {
             <p className="mt-4 text-lg md:text-2xl max-w-2xl mx-auto drop-shadow-md">
               For all your recruitment needs
             </p>
-            <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
           </div>
         </section>
 
