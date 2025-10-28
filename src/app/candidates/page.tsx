@@ -33,8 +33,12 @@ export default function CandidatesPage() {
 
     return (
         <>
-            <section className="bg-primary text-primary-foreground py-16 md:py-20">
-                <div className="container mx-auto px-4 text-center">
+            <section 
+              className="relative bg-cover bg-center py-16 md:py-20 text-primary-foreground"
+              style={{ backgroundImage: "url('/img/findjob.jpg')" }}
+            >
+                <div className="absolute inset-0 bg-primary/70" />
+                <div className="relative container mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold font-headline">Find Your Perfect Job</h1>
                     <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
                         Browse our open positions and take the next step in your career.
