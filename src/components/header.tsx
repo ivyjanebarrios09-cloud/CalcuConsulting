@@ -21,12 +21,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/80 backdrop-blur-sm">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary">
-          <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={32} height={32} />
-          <span className="font-headline">Calcu Consulting</span>
-        </Link>
-        <nav className="hidden items-center gap-6 md:flex">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:grid md:grid-cols-3">
+        <div className="flex justify-start">
+            <Link href="/" className="flex items-center gap-2 font-bold text-lg text-primary">
+              <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={32} height={32} />
+              <span className="font-headline">Calcu Consulting</span>
+            </Link>
+        </div>
+        <nav className="hidden items-center justify-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -40,7 +42,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="md:hidden">
+        <div className="flex justify-end md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
@@ -69,6 +71,9 @@ export function Header() {
               </nav>
             </SheetContent>
           </Sheet>
+        </div>
+         <div className="hidden md:flex justify-end">
+          {/* This empty div will push the nav to the center */}
         </div>
       </div>
     </header>
