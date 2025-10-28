@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, Users, Lightbulb, CheckCircle, Target, Handshake, Search, UserCheck } from 'lucide-react';
+import { Briefcase, Users, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,7 +15,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4 flex flex-col items-center">
-            <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={150} height={150} className="mb-4 drop-shadow-lg" />
+            <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={250} height={250} className="mb-4 drop-shadow-lg" />
             <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
               Calcu Consulting
             </h1>
@@ -51,67 +51,6 @@ export default function Home() {
                     </div>
                 </div>
               </Link>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="py-16 md:py-24 bg-card">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-headline font-bold text-primary mb-4">About Us</h2>
-                <p className="text-muted-foreground mb-4">
-                  Calcu Consulting is a premier recruitment and consulting firm dedicated to connecting exceptional talent with leading organizations. Our mission is to build lasting partnerships by providing tailored solutions that drive growth and success.
-                </p>
-                <p className="text-muted-foreground">
-                  With years of industry experience, our team of experts leverages deep market insights and a vast network to deliver results that exceed expectations. We believe in a personalized approach, ensuring we understand the unique needs of both our clients and candidates.
-                </p>
-              </div>
-              <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                 <Image src="/img/aboutt.jpg" alt="Team meeting" fill objectFit="cover" data-ai-hint="business team" />
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section id="why-choose-us" className="py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-headline font-bold text-primary mb-2">Why Choose Us?</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto mb-12">We are committed to excellence and delivering unparalleled value to our clients through our bespoke services.</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="text-center">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit">
-                    <Target className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="pt-4">Expertise</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Our team possesses deep industry knowledge to find the perfect fit for your company's needs.</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit">
-                    <Handshake className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="pt-4">Partnership</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">We build strong, long-term relationships to better understand and serve our clients.</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit">
-                    <CheckCircle className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="pt-4">Proven Results</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Our track record of successful placements and satisfied clients speaks for itself.</p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>
