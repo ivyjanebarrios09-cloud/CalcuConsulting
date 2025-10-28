@@ -20,7 +20,7 @@ export default function Home() {
               For all your recruitment needs
             </p>
             <h1 className="mt-4 text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
-              Calcu Consulting
+              <span className="text-accent">Calcu</span> <span>Consulting</span>
             </h1>
           </div>
         </section>
