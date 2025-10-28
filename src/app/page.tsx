@@ -72,7 +72,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 text-center">
               <Link href="/candidates">
                 <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-primary text-primary-foreground">
-                    <Image src="https://picsum.photos/seed/1/600/300" alt="Candidates" fill style={{objectFit: 'cover'}} className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
+                    <Image src="/img/candidates.jpg" alt="Candidates" fill style={{objectFit: 'cover'}} className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="recruitment candidates" />
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold font-headline mb-2">CANDIDATES</h3>
                       <p className="mb-4">FIND YOUR PERFECT JOB HERE!</p>
@@ -82,7 +82,7 @@ export default function Home() {
               </Link>
               <Link href="/clients">
                 <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-accent text-accent-foreground">
-                     <Image src="https://picsum.photos/seed/2/600/300" alt="Clients" fill style={{objectFit: 'cover'}} className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="geometric abstract" />
+                     <Image src="/img/clients.jpg" alt="Clients" fill style={{objectFit: 'cover'}} className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="business handshake" />
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold font-headline mb-2">CLIENTS</h3>
                       <p className="mb-4">DISCOVER TOP TALENT!</p>
