@@ -11,7 +11,7 @@ export default function Home() {
       <main className="flex-grow">
         <section 
           className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url('/img/hero.jpg')" }}
+          style={{ backgroundImage: "url('/img/heroo.jpg')" }}
         >
           <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4 flex flex-col items-center">
