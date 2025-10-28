@@ -1,11 +1,16 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = {
   title: 'Calcu Consulting - For all your recruitment needs',
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} font-body antialiased`}>
+      <body className={`${inter.variable} ${poppins.variable} font-body antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />
