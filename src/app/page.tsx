@@ -16,12 +16,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-primary/60" />
           <div className="relative z-10 p-4 flex flex-col items-center">
             <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={250} height={250} className="mb-4 drop-shadow-lg" />
-            <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
-              Calcu Consulting
-            </h1>
-            <p className="mt-4 text-lg md:text-2xl max-w-2xl mx-auto drop-shadow-md">
+             <p className="mt-2 text-lg md:text-2xl max-w-2xl mx-auto drop-shadow-md">
               For all your recruitment needs
             </p>
+            <h1 className="mt-4 text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
+              Calcu Consulting
+            </h1>
           </div>
         </section>
 
