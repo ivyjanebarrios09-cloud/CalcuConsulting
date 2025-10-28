@@ -74,9 +74,9 @@ export default function Home() {
                 <div className="relative rounded-lg overflow-hidden group h-64 flex flex-col items-center justify-center p-6 bg-primary text-primary-foreground">
                     <Image src="/img/candidates.jpg" alt="Candidates" fill style={{objectFit: 'cover'}} className="opacity-10 group-hover:opacity-20 transition-opacity" data-ai-hint="recruitment candidates" />
                     <div className="relative z-10">
-                      <h3 className="text-3xl font-bold font-headline mb-2">CANDIDATES</h3>
-                      <p className="mb-4">FIND YOUR PERFECT JOB HERE!</p>
-                      <Button variant="outline" className="text-primary bg-primary-foreground border-primary-foreground hover:bg-primary-foreground/90">CLICK HERE!</Button>
+                      <h3 className="text-3xl font-bold font-headline mb-2 text-accent">CANDIDATES</h3>
+                      <p className="mb-4 text-accent">FIND YOUR PERFECT JOB HERE!</p>
+                      <Button variant="outline" className="text-accent bg-transparent border-accent hover:bg-accent hover:text-accent-foreground">CLICK HERE!</Button>
                     </div>
                 </div>
               </Link>
@@ -86,7 +86,7 @@ export default function Home() {
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold font-headline mb-2">CLIENTS</h3>
                       <p className="mb-4">DISCOVER TOP TALENT!</p>
-                      <Button variant="outline" className="text-accent bg-accent-foreground border-accent-foreground hover:bg-accent-foreground/90">CLICK HERE!</Button>
+                      <Button variant="outline" className="text-accent-foreground bg-transparent border-accent-foreground hover:bg-accent-foreground hover:text-accent">CLICK HERE!</Button>
                     </div>
                 </div>
               </Link>
