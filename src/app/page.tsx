@@ -10,17 +10,17 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
         <section 
-          className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white bg-cover bg-center bg-fixed"
+          className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-foreground bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/img/heroo.jpg')" }}
         >
-          <div className="absolute inset-0 bg-primary/60" />
+          <div className="absolute inset-0 bg-background/70" />
           <div className="relative z-10 p-4 flex flex-col items-center">
             <Image src="/img/logos.png" alt="Calcu Consulting Logo" width={250} height={250} className="mb-4 drop-shadow-lg" />
              <p className="mt-2 text-lg md:text-2xl max-w-2xl mx-auto drop-shadow-md">
               For all your recruitment needs
             </p>
             <h1 className="mt-4 text-4xl md:text-6xl font-headline font-bold drop-shadow-lg">
-              <span className="text-accent">Calcu</span> <span>Consulting</span>
+              <span className="text-accent">Calcu</span> <span className="text-primary">Consulting</span>
             </h1>
           </div>
         </section>
