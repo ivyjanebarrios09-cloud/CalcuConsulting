@@ -3,14 +3,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { cn } from '@/lib/utils';
+import React from 'react';
 
-interface AnimatedSectionProps {
+interface AnimatedSectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
-  className?: string;
-  id?: string;
 }
 
-export function AnimatedSection({ children, className, id }: AnimatedSectionProps) {
+export function AnimatedSection({ children, className, ...props }: AnimatedSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
@@ -21,13 +20,13 @@ export function AnimatedSection({ children, className, id }: AnimatedSectionProp
 
   return (
     <motion.section
-      id={id}
       ref={ref}
       className={cn(className)}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={variants}
       transition={{ duration: 0.5, delay: 0.25 }}
+      {...props}
     >
       {children}
     </motion.section>
