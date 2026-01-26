@@ -1,3 +1,4 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -15,7 +16,7 @@ interface AnimatedCardProps extends CardProps {
 
 export function AnimatedCard({ children, className, index = 0, ...props }: AnimatedCardProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { amount: 0.2 });
 
   const cardVariants = {
     hidden: { opacity: 0, y: 75, rotate: -5 },

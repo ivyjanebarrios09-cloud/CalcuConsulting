@@ -1,3 +1,4 @@
+
 'use client';
 
 import { motion, useInView } from 'framer-motion';
@@ -11,7 +12,7 @@ interface AnimatedSectionProps extends React.HTMLAttributes<HTMLElement> {
 
 export function AnimatedSection({ children, className, ...props }: AnimatedSectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { amount: 0.1 });
 
   const variants = {
       hidden: { opacity: 0, y: 100 },
