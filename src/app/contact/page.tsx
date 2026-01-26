@@ -1,24 +1,26 @@
 import { ContactForm } from "@/components/contact-form";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { AnimatedCard } from "@/components/animated-card";
+import { CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone, MapPin, User } from "lucide-react";
+import { AnimatedSection } from "@/components/animated-section";
 
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-primary text-primary-foreground py-16 md:py-20">
+      <AnimatedSection className="bg-primary text-primary-foreground py-16 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline">Contact Us</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
             We&apos;re here to help. Reach out to us with any questions or to discuss your needs.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-16 md:py-24">
+      <AnimatedSection className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
             <div className="lg:col-span-2">
-              <Card>
+              <AnimatedCard>
                 <CardHeader>
                   <CardTitle>Send us a message</CardTitle>
                   <CardDescription>Replies to your message will be sent to your email or phone number.</CardDescription>
@@ -26,11 +28,11 @@ export default function ContactPage() {
                 <CardContent>
                   <ContactForm />
                 </CardContent>
-              </Card>
+              </AnimatedCard>
             </div>
 
             <div className="space-y-8">
-              <Card>
+              <AnimatedCard>
                 <CardHeader>
                   <CardTitle>Contact Information</CardTitle>
                 </CardHeader>
@@ -56,14 +58,14 @@ export default function ContactPage() {
                     <span className="text-muted-foreground">calcuconsulting@proton.me</span>
                   </div>
                 </CardContent>
-              </Card>
+              </AnimatedCard>
             </div>
           </div>
           
           <div className="mt-16">
             <h2 className="text-3xl font-bold font-headline text-primary text-center mb-12">Our Office Locations</h2>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-              <Card>
+              <AnimatedCard index={0}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-primary" />
@@ -86,8 +88,8 @@ export default function ContactPage() {
                     ></iframe>
                   </div>
                 </CardContent>
-              </Card>
-              <Card>
+              </AnimatedCard>
+              <AnimatedCard index={1}>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-primary" />
@@ -110,12 +112,12 @@ export default function ContactPage() {
                     ></iframe>
                   </div>
                 </CardContent>
-              </Card>
+              </AnimatedCard>
             </div>
           </div>
 
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

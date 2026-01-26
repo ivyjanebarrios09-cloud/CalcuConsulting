@@ -4,6 +4,7 @@ import { Inter, Poppins } from 'next/font/google';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
+import PageWrapper from '@/components/page-wrapper';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const poppins = Poppins({
@@ -25,9 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${poppins.variable} font-body antialiased`}>
+      <body className={`${inter.variable} ${poppins.variable} font-body antialiased flex flex-col min-h-screen`}>
         <Header />
-        <main>{children}</main>
+        <main className="flex-grow">
+          <PageWrapper>{children}</PageWrapper>
+        </main>
         <Footer />
         <Toaster />
       </body>

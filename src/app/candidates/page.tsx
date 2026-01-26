@@ -2,13 +2,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { AnimatedCard } from "@/components/animated-card";
+import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { allJobs, jobCategories } from "@/lib/jobs";
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { AnimatedSection } from "@/components/animated-section";
 
 
 export default function CandidatesPage() {
@@ -33,7 +35,7 @@ export default function CandidatesPage() {
 
     return (
         <>
-            <section 
+            <AnimatedSection 
               className="relative bg-cover bg-center py-16 md:py-20 text-primary-foreground"
               style={{ backgroundImage: "url('/img/findjob.jpg')" }}
             >
@@ -58,8 +60,8 @@ export default function CandidatesPage() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className="py-16 md:py-24">
+            </AnimatedSection>
+            <AnimatedSection className="py-16 md:py-24">
                 <div className="container mx-auto px-4">
                      <div className="mb-12 flex flex-wrap justify-center gap-2 md:gap-4">
                         {jobCategories.map(category => (
@@ -76,7 +78,7 @@ export default function CandidatesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredJobs.length > 0 ? (
                             filteredJobs.map((job, index) => (
-                                <Card key={index} className="flex flex-col overflow-hidden">
+                                <AnimatedCard key={index} index={index} className="flex flex-col overflow-hidden">
                                      {job.image ? (
                                         <div className="relative h-48 w-full">
                                             <Image src={job.image} alt={job.title} fill style={{objectFit: 'cover'}} />
@@ -98,7 +100,7 @@ export default function CandidatesPage() {
                                             <Link href={`/apply?jobTitle=${encodeURIComponent(job.title)}`}>Apply Now</Link>
                                         </Button>
                                     </CardFooter>
-                                </Card>
+                                </AnimatedCard>
                             ))
                         ) : (
                             <div className="col-span-full text-center text-muted-foreground">
@@ -107,7 +109,7 @@ export default function CandidatesPage() {
                         )}
                     </div>
                 </div>
-            </section>
+            </AnimatedSection>
         </>
     );
 }
