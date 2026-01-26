@@ -18,15 +18,15 @@ export function AnimatedCard({ children, className, index = 0, ...props }: Anima
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, rotate: -3 },
+    hidden: { opacity: 0, y: 75, rotate: -5 },
     visible: { 
         opacity: 1, 
         y: 0,
         rotate: 0,
         transition: {
             type: "spring",
-            stiffness: 100,
-            damping: 10,
+            stiffness: 80,
+            damping: 12,
             delay: index * 0.15,
         }
     },
