@@ -119,8 +119,8 @@ export default function ContactPage() {
 
           <div className="mt-16 md:mt-24">
             <h2 className="text-3xl font-bold font-headline text-primary text-center mb-12">Compliance & Insurance</h2>
-            <div className="max-w-2xl mx-auto">
-              <AnimatedCard>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <AnimatedCard index={0}>
                 <CardHeader className="text-center">
                   <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-2">
                     <ShieldCheck className="h-8 w-8 text-primary" />
@@ -133,6 +133,26 @@ export default function ContactPage() {
                     <Image
                       src="/img/employersliability.jpg"
                       alt="Employer's Liability Insurance"
+                      fill
+                      className="object-contain p-2"
+                      data-ai-hint="insurance certificate"
+                    />
+                  </div>
+                </CardContent>
+              </AnimatedCard>
+              <AnimatedCard index={1}>
+                <CardHeader className="text-center">
+                  <div className="mx-auto bg-primary/10 rounded-full p-3 w-fit mb-2">
+                    <ShieldCheck className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle>Public Liability Insurance</CardTitle>
+                  <CardDescription>Comprehensive protection for our public-facing operations and physical locations.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex justify-center p-6 pt-0">
+                  <div className="relative w-full aspect-[1/1.4] max-w-sm rounded-lg overflow-hidden border shadow-inner bg-muted">
+                    <Image
+                      src="/img/publicliability.jpg"
+                      alt="Public Liability Insurance"
                       fill
                       className="object-contain p-2"
                       data-ai-hint="insurance certificate"
